@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            javascript Functions Scope
+        </title>
+    </head>
+    <body>
+        <h1>javascript Closures</h1>
+        <p id="demo"></p>
+
+        <script>
+            let a=10;  //global scope
+            function Myfunc(){
+                let b=20;   // local scope
+                document.write(a+b)
+            }
+            Myfunc()
+        </script>
+
+        <script>
+            var c=10
+            function First_func(){
+                var d=20;
+                function Second_func(){
+                   // var e=c+d
+                   var e= 20 + c+d
+                    return e
+                }
+                return Second_func()
+            }
+            var sum=First_func()
+            document.write("the sum is : " + sum + "<br>")
+        </script>
+
+    </body>
+</html>

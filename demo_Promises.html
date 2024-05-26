@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>
+            javascript Promises
+        </title>
+    </head>
+    <body>
+        <h1>javascript promises</h1>
+        <p id="demo"></p>
+
+        <script>
+            let car=new Promise(function(resolve,reject){
+              //  fuel_fulltank=true;
+                fuel_fulltank=false;
+                if(fuel_fulltank)
+                    resolve()
+                else
+                    reject()
+            });
+            car.then(function(){
+                document.write("The Fuel Tank is full. Happy Driving..!") //if true then this executed
+            }).catch(function(){
+                document.write("The fuel tank is not empty...")   // if false then this executed
+            })
+        </script>
+
+        
+
+        <script>
+
+            // nested promises functions
+
+            let empty_tank = function(){
+                return new Promise(function(resolve,reject){
+                    resolve("The car doesn't get enough fuel...!")
+                })
+            }
+
+            let engine = function(msg){
+                return new Promise(function(resolve,reject){
+                    resolve(msg + "The engine is over heating!")
+                })
+            }
+
+            let travel = function(msg){
+                return new Promise(function(resolve,reject){
+                    resolve(msg + "The car is not safe for travelling!")
+                })
+            }
+
+            empty_tank().then(function(result){
+                return engine(result)
+            }).then(function(result){
+                return travel(result)
+            }).then(function(result){
+                console.log("Done!" + result)
+            })
+
+        </script>
+
+    </body>
+</html>

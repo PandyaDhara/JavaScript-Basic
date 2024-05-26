@@ -1,0 +1,44 @@
+<html>
+    <head><title> Javascript Loops</title></head>
+    <body>Javascript Do While Loop
+
+    <script>
+        let x=15;
+        do{
+            console.log(x);
+            x++;
+        }while(x<10)
+
+        console.log("after change value of x 15 to 5,show the result");
+
+        let y=5;
+        do{
+            console.log(y);
+            y++;
+        }while(y<10)
+
+        console.log("after add BREAK keyword");
+
+        let a=3;
+        do{
+            console.log(a);
+            a++;
+            if(a==7)
+            break;
+        }while(a<9)
+
+        console.log("after add CONTINUE keyword");
+
+        let b=4;
+        do{
+          //  console.log(b); ->if con. is false then it result at least once
+            b++;
+            if(b==7)
+                continue;
+            console.log(b);
+        }while(b<12)
+
+    </script>
+
+</body>
+</html>

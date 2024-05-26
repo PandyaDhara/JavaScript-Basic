@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>
+            javascript This Keyword
+        </title>
+    </head>
+    <body>
+        <h1>javascript .this word</h1>
+        <p id="demo"></p>
+
+        <script>
+
+            //this keyword returns global value
+
+            var value = 50;
+
+            function my_func(){
+                var value=100;
+                alert("value : " + value)
+                alert("This value : " + this.value)
+            }
+            my_func()
+
+        </script>
+
+
+        <script>
+
+            const random = {
+                name : "Dhara",
+                info(){
+                    console.log("My name is " + this.name)
+                }
+            }
+            random.info()
+
+        </script>
+
+<script>
+
+    const random1 = {
+        name : "tutorial",
+        video : ["javascipt","this","keyword"],
+        info1(){
+            this.video.forEach(function(tag){
+                console.log(tag)
+            })
+            
+        }
+    }
+    random1.info1()
+
+</script>
+
+<script>
+
+    const random2 = {
+        name1 : "tutorial",
+        video1 : ["javascipt","this","keyword"],
+        info2(){
+            this.video1.forEach(function(tag){
+                console.log(this.name1,tag)
+            },this)
+            
+        }
+    }
+    random2.info2()
+
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>
+        javascript Asynch Function
+    </title>
+</head>
+
+<body>
+    <h1>javascript Async/Await Functions</h1>
+    <p id="demo"></p>
+
+    <script>
+
+        let result = function (score) {
+            return new Promise(function (resolve, reject) {
+                console.log("Calculating results...")
+                if (score > 50)
+                    resolve("Congratulations..! You have passed.")
+                else
+                    reject("You have failed.")
+            })
+        }
+
+        let grade = function (response) {
+            return new Promise(function (resolve, reject) {
+                console.log("Calculating grade...")
+                resolve("Your grade is A. " + response)
+            })
+        }
+
+        result(80).then(response => {
+            console.log("Result is recieved.")
+            return grade(response)
+        }).then(finalgrade => {
+            console.log(finalgrade)
+        }).catch(err => {
+            console.log(err)
+        })
+
+    </script>
+
+
+    <script>
+
+        // with async/await function
+        let result1 = function (score) {
+            return new Promise(function (resolve, reject) {
+                console.log("Calculating results...")
+                if (score > 50)
+                    resolve("Congratulations..! You have passed.")
+                else
+                    reject("You have failed.")
+            })
+        }
+
+        let grade1 = function (responses) {
+            return new Promise(function (resolve, reject) {
+                console.log("Calculating grade...")
+                resolve("Your grade is A. " + responses)
+            })
+        }
+
+        async function calculateResults() {
+
+            try{
+            const responses = await result1(80)
+            console.log("Results recevied.")
+            const finalgrade1 = await grade1(responses)
+            console.log(finalgrade1)
+            } 
+            catch(err){
+                console.log(err)
+            }
+        }
+        calculateResults()
+
+    </script>
+
+</body>
+
+</html>

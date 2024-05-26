@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Javascript Accessors</title>
+    </head>
+    <body>
+        <h1>javascript accessors getter and setter Methods</h1>
+        <p id="demo"></p>
+
+
+        <script>
+
+            //use getter method to get value of any property  
+            var car= {
+                model : "BMW 320d",
+                color : "nevy blue",
+                fuel_type : "dieseal",
+
+                get fuel(){             //use of get method
+                    return this.fuel_type;
+                },
+            };
+            document.getElementById("demo").innerHTML = car.fuel;
+
+        </script>
+
+        <script>
+
+            //use setter method to put value of any property
+
+            var car ={
+                model : "Audi A4",
+                color : "bright red",
+                fuel_type : "",
+            
+            set fuel(fuel){        // use of set method
+                this.fuel_type=fuel;
+            }
+         }
+         car.fuel="Petrol";
+         document.getElementById("demo").innerHTML = car.fuel_type;
+
+        </script>
+
+    </body>
+</html>

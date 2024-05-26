@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Javascript Properties</title>
+    </head>
+    <body>
+        <h1>javascript object properties update,delete,select</h1>
+        <p id="demo"></p>
+    </body>
+
+    <script>
+
+        // use object literal to create and define a javascript object
+
+        var student = {
+                name : "Dhara",
+                age  : 21,
+                study : "MSc IT",
+            };
+            student.age=23;   // update property value 
+            document.getElementById("demo").innerHTML=student.name + " of the age is " + student.age + " studies " + student.study;
+
+    </script>
+
+    <script>
+
+       // use object literal to create and define a javascript object
+
+       var student = {
+            name : "Dhara",
+            age  : 21,
+            study : "MSc IT",
+        };
+        x=student.age;   // assigned  property name 
+        document.getElementById("demo").innerHTML=student.name + " of the age is " + x + " studies " + student.study; //student.age ni bdle x
+
+    </script>
+
+<script>
+
+    // use object literal to create and define a javascript object
+
+    var student = {
+         name : "Dhara",
+         age  : 21,
+         study : "MSc IT",
+     };
+     x="age";   // assigned  property name in age 
+     document.getElementById("demo").innerHTML=student.name + " of the age is " + student[x] + " studies " + student.study; //x ni bdle student[x]
+
+ </script>
+
+
+
+</html>

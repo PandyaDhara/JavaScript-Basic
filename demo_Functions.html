@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>
+            javascript Functions
+        </title>
+    </head>
+    <body>
+        <h1>javascript functions</h1>
+        <p id="demo"></p>
+    
+        <script>
+            //function declaration
+            function my_function(value){
+                document.getElementById("demo").innerHTML = value*value;
+            }
+            my_function(5);
+
+        </script>
+
+        <script>
+            //function as a expression
+            let x = function(){
+                alert("Hello!")
+            }
+            let y=x;
+            //document.getElementById("demo").innerHTML = x();
+            document.getElementById("demo").innerHTML = y()  // jo y=x vri line use kro to aa line bki uper ni
+        </script>
+
+        <script>
+             //function constructor
+            var MyFunction = new Function("a","b","return a+b")
+            var z=MyFunction(2,3)
+            document.getElementById("demo").innerHTML = "The sum is : " + z
+
+        </script>
+
+        <script>
+            //self-invoking function
+            (function(){
+                alert("Hello Welcome...!")
+            })()
+
+        </script>
+
+        <script>
+            //functions as value
+            function Product(a,b){
+                return a*b
+            }
+            let a=Product(2,5)*5
+          //  let a=Product(2,5)
+            document.getElementById("demo").innerHTML = "The multiply of a & b is : " + a
+        </script>
+
+        <script>
+            //function as object
+            var body="return Math.PI * rad *rad "
+            var circle = new Function("rad",body);
+            alert(circle(5))
+        </script>
+
+        <script>
+            //arrow functions
+            const My_Func=(a,b,c)=> {return a*b*c}
+            let product =My_Func(2,3,4)
+            document.getElementById("demo").innerHTML = "The product of three numbers is : " + product
+        </script>
+
+        <script>
+            //generator functions
+            function* generateFunc(){
+                yield 1;
+                yield 2;
+                return 3;
+            }
+            let generator = generateFunc();
+            let one = generator.next();
+            let two = generator.next();
+            let three = generator.next();
+            alert(JSON.stringify(one));
+            alert(JSON.stringify(two));
+            alert(JSON.stringify(three));
+        </script>
+
+    </body>
+</html>

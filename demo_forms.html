@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Form Validation</title>
+    <script type="text/javascript">
+
+        function Validate() {
+
+            var mail = document.getElementsByName("text").value;
+            var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+
+            if(regx.text(mail)){
+                alert("you enter valid email ID :)")
+                return true
+            }else{
+                alert("you enter invalid email id :(")
+                return false
+            }
+
+            if (document.MyForm.email.value == "") {
+                alert("Please provide your Email ID ...!");
+                document.MyForm.email.focus()
+                return false
+            } else if (document.MyForm.password.value == "") {
+                alert("Please enter password!")
+                document.MyForm.password.focus()
+                return false
+            }
+            else { 
+                return true
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <form action="demo_Message_Form.html" name="MyForm" onsubmit="return(Validate())">
+        <input name=email placeholder="email" type="text"></br>
+        <input name=password placeholder="password" type="text"></br>
+        <button onclick="Validate()" type="submit" >Submit</button>
+    </form>
+
+</body>
+
+</html>
